@@ -1,0 +1,32 @@
+<%- include('./partials/header') %>
+        <h4><%= sampleText%></h4>
+        <h2>This is students list page</h2>
+        <ul>
+            <li>
+                <a href="/home">Home</a>
+            </li>
+            <li>
+                <a href="/students/new">Add New Student</a>
+            </li>
+        </ul>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Branch</th>
+                <th>Actions</th>
+            </tr>
+            <% students.forEach(function(student) { %>
+                <tr>
+                    <td><%= student.name %></td>
+                    <td><%= student.age %></td>
+                    <td><%= student.branch %></td>
+                    <td><a href="/students/edit/<%= student.id %>">Edit</a>
+                        <a href="/students/delete/<%= student.id %>">Delete</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
+        <a href="/students/filter/<%= pskip %>/<%= limit %>">Previous</a>
+        <a href="/students/filter/<%= nskip %>/<%= limit %>">Next</a>
+<%- include('./partials/footer') %>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Student page</title>
+    </head>
+    <body>
+        <h2>Add New Student</h2>
+        <form method="post" action="/students">
+            <input type="hidden" name="id" value="<%= student.id %>" />
+            <label for="name">Name (4 to 8 characters):</label>
+            <input type="text" name="name" required value="<%= student.name %>"><br>
+            <label for="branch">Branch:</label>
+            <input type="text" name="branch" value="" /><br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
